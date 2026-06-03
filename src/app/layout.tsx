@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext"; // Import it here
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Shift Essentials",
@@ -18,6 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+  return (
+    <html lang="en">
+      <body>
         {/* Wrap the entire app so every page shares the same cart */}
         <CartProvider>
           {children}
@@ -25,4 +25,3 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
